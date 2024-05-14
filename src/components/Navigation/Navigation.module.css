@@ -1,0 +1,14 @@
+.link {
+  text-decoration: none;
+  padding: 8px;
+  margin-right: 8px;
+  display: inline-block;
+  color: beige;
+  border: 1px solid beige;
+  border-radius: 4px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.link:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 8px rgba(255, 255, 0, 0.5);
+}

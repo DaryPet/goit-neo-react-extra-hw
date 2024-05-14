@@ -1,8 +1,17 @@
-.header {
+/* .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 24px;
-  padding: 12px;
-  border-bottom: 1px solid blueviolet;
+  padding: 12px 24px;
+  background-color: #5757b4;
+} */
+.appBar {
+  background-color: #5757b4;
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+  margin-bottom: 24px;
+  padding: 12px 24px;
+  background-color: #5757b4;
 }

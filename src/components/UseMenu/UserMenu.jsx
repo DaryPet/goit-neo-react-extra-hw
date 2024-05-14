@@ -10,9 +10,11 @@ export default function UserMenu() {
     dispatch(logout())
       .unwrap()
       .then((response) => {
+        console.log(response);
         toast.success("You are sucessfully Loged Out!");
       })
       .catch((error) => {
+        console.log(error);
         toast.error("There is an error! Please try logged out again!");
       });
   };
