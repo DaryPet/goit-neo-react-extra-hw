@@ -1,3 +1,10 @@
-// export const Layout = ({ children }) => {
-//   return <main>{children}</main>;
-// };
+import AppBar from "../AppBar/AppBar";
+
+export default function Layout({ children }) {
+  return (
+    <div>
+      <AppBar />
+      {children}
+    </div>
+  );
+}
