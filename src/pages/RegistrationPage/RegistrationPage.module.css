@@ -1,3 +1,6 @@
 .wraper {
-  margin: 24px;
+  margin: 0;
+  padding: 24px;
+  background-color: rgb(231, 223, 238);
+  min-height: 100vh;
 }

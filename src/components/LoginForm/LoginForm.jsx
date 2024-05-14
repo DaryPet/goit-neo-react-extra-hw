@@ -67,6 +67,7 @@ export default function LoginForm() {
           />
         </Box>
         <Button
+          className={css.btn}
           type="submit"
           variant="contained"
           sx={{ backgroundColor: "#5757b4" }}

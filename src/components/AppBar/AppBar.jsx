@@ -21,7 +21,7 @@ export default function AppBar() {
           component="div"
           sx={{ flexGrow: 1, textAlign: "center" }}
         >
-          Contact Book
+          CONTACT BOOK
         </Typography>
 
         {/* <header className={css.header}> */}

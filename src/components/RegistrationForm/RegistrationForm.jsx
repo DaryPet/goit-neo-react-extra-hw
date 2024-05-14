@@ -80,6 +80,7 @@ export default function RegistrationForm() {
         </label> */}
         {/* <button type="submit">Register</button> */}
         <Button
+          className={css.btn}
           type="submit"
           variant="contained"
           sx={{ backgroundColor: "#5757b4" }}

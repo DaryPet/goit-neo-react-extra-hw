@@ -1,3 +1,5 @@
+import css from "./HomePage.module.css";
+
 export default function HomePage() {
-  return <div>Hello!</div>;
+  return <div className={css.wraper}></div>;
 }
