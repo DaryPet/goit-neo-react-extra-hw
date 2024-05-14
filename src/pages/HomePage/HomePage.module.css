@@ -1,6 +1,20 @@
 .wraper {
   margin: 0;
-  padding: 24px;
+  padding: 64px;
   background-color: rgb(231, 223, 238);
   min-height: 100vh;
+  display: flex;
+  gap: 20px;
+
+  /* align-items: center; */
+  align-items: flex-start;
+}
+.picture {
+  width: 600px;
+  margin-right: 20px;
+  border-radius: 8px;
+}
+.text {
+  font-size: larger;
+  text-align: justify;
 }
