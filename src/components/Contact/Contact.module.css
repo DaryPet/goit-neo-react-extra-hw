@@ -1,0 +1,31 @@
+.container {
+  border: 2px solid black;
+  border-radius: 4px;
+  padding: 4px;
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+}
+.data {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 0;
+  text-align: start;
+}
+.text {
+  margin: 0;
+}
+.btn {
+  background-color: #80808d;
+  color: white;
+  font-weight: 400;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  align-items: center;
+  margin: 0 auto;
+}
+.btn:hover {
+  background-color: #9494a2;
+}
