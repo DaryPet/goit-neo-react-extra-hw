@@ -1,10 +1,12 @@
-// import LoginForm from "./"
+import LoginForm from "../../components/LoginForm/LoginForm";
+import css from "./LoginPage.module.css";
 
 export default function LoginPage() {
   return (
-    <div>
-      Please Log in
-      {/* <LoginForm /> */}
+    <div className={css.wraper}>
+      <h2 className={css.text}>Please Log in!</h2>
+
+      <LoginForm />
     </div>
   );
 }
