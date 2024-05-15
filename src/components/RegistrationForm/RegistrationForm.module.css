@@ -1,6 +1,8 @@
 .form {
   width: 320px;
+  color: aliceblue;
 }
+
 .btn:hover {
   background-color: #5757b4;
   transform: scale(1.1);

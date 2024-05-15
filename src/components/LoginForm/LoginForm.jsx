@@ -1,10 +1,11 @@
-import { Formik, Form, Field } from "formik";
+import { Formik, Form, Field, ErrorMessage } from "formik";
 import css from "./LoginForm.module.css";
 import { useDispatch } from "react-redux";
 import { login } from "../../redux/auth/operations";
 import { toast } from "react-hot-toast";
 import { TextField, Button, Typography, Box } from "@mui/material";
 import LockIcon from "@mui/icons-material/Lock";
+import * as Yup from "yup";
 
 export default function LoginForm() {
   const dispatch = useDispatch();
@@ -29,21 +30,19 @@ export default function LoginForm() {
         email: "",
         password: "",
       }}
+      validationSchema={Yup.object({
+        email: Yup.string().email("Invalid email address").required("Required"),
+        password: Yup.string()
+          .min(8, "Password must be at least 8 characters")
+          .required("Required"),
+      })}
       onSubmit={handleSubmit}
     >
       <Form autoComplete="off" className={css.form}>
         <Typography variant="h5" gutterBottom>
           Login
         </Typography>
-        {/* <label className={css.label}>
-          Email
-          <Field type="email" name="email" />
-        </label>
-        <label className={css.label}>
-          Password
-          <Field type="password" name="password" />
-        </label>
-        <button type="submit">Log In</button> */}
+
         <Box marginBottom={2}>
           <Field
             name="email"
@@ -53,8 +52,10 @@ export default function LoginForm() {
             variant="outlined"
             fullWidth
             margin="normal"
+            sx={{ backgroundColor: "white" }}
           />
         </Box>
+        <ErrorMessage name="email" component="div" className={css.error} />
         <Box marginBottom={2}>
           <Field
             name="password"
@@ -64,13 +65,15 @@ export default function LoginForm() {
             variant="outlined"
             fullWidth
             margin="normal"
+            sx={{ backgroundColor: "white" }}
           />
         </Box>
+        <ErrorMessage name="password" component="div" className={css.error} />
         <Button
           className={css.btn}
           type="submit"
           variant="contained"
-          sx={{ backgroundColor: "#5757b4" }}
+          sx={{ backgroundColor: "#5757b4", marginTop: 2 }}
           startIcon={<LockIcon />}
         >
           Login

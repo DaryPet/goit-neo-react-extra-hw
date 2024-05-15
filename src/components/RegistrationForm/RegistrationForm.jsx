@@ -1,10 +1,11 @@
-import { Formik, Form, Field } from "formik";
+import { Formik, Form, Field, ErrorMessage } from "formik";
 import css from "./RegistrationForm.module.css";
 import { useDispatch } from "react-redux";
 import { register } from "../../redux/auth/operations";
 import { TextField, Button, Typography, Box } from "@mui/material";
 import { toast } from "react-hot-toast";
 import LockIcon from "@mui/icons-material/Lock";
+import * as Yup from "yup";
 
 export default function RegistrationForm() {
   const dispatch = useDispatch();
@@ -31,6 +32,13 @@ export default function RegistrationForm() {
         email: "",
         password: "",
       }}
+      validationSchema={Yup.object({
+        name: Yup.string().required("Required"),
+        email: Yup.string().email("Invalid email address").required("Required"),
+        password: Yup.string()
+          .min(8, "Password must be at least 8 characters")
+          .required("Required"),
+      })}
       onSubmit={handleSubmit}
     >
       <Form className={css.form}>
@@ -45,8 +53,12 @@ export default function RegistrationForm() {
             variant="outlined"
             fullWidth
             margin="normal"
+            sx={{ backgroundColor: "white" }}
           />
         </Box>
+
+        <ErrorMessage name="name" component="div" className={css.error} />
+
         <Box marginBottom={2}>
           <Field
             name="email"
@@ -56,8 +68,11 @@ export default function RegistrationForm() {
             variant="outlined"
             fullWidth
             margin="normal"
+            sx={{ backgroundColor: "white" }}
           />
         </Box>
+        <ErrorMessage name="email" component="div" className={css.error} />
+
         <Box marginBottom={2}>
           <Field
             name="password"
@@ -67,23 +82,26 @@ export default function RegistrationForm() {
             variant="outlined"
             fullWidth
             margin="normal"
+            sx={{ backgroundColor: "white" }}
           />
         </Box>
+        <ErrorMessage name="password" component="div" className={css.error} />
+
         {/* <label className={css.label}>
           Username <Field type="text" name="name" />
-        </label> */}
-        {/* <label className={css.label}>
+        </label>
+        <label className={css.label}>
           Email <Field type="email" name="email" />
         </label>
         <label className={css.label}>
           Password <Field type="password" name="password" />
-        </label> */}
-        {/* <button type="submit">Register</button> */}
+        </label>
+        <button type="submit">Register</button> */}
         <Button
           className={css.btn}
           type="submit"
           variant="contained"
-          sx={{ backgroundColor: "#5757b4" }}
+          sx={{ backgroundColor: "#5757b4", marginTop: 2 }}
           startIcon={<LockIcon />}
         >
           Register

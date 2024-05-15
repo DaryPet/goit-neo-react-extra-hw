@@ -1,5 +1,9 @@
 .form {
   width: 320px;
+  color: aliceblue;
+}
+.label {
+  color: aliceblue;
 }
 .btn:hover {
   background-color: #5757b4;
