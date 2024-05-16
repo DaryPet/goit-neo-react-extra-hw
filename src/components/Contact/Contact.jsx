@@ -5,8 +5,9 @@ import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { deleteContact } from "../../redux/contacts/operations";
 import { Delete } from "@mui/icons-material";
-import { Button } from "@mui/material";
-import Modal from "react-modal";
+import { Button, Dialog, DialogActions, DialogTitle } from "@mui/material";
+import { Modal as MuiModal } from "@mui/material";
+// import Modal from "react-modal";
 
 export default function Contacts({ data }) {
   const dispatch = useDispatch();
@@ -41,22 +42,41 @@ export default function Contacts({ data }) {
       >
         Delete
       </Button>
-      <Modal
-        isOpen={modalIsOpen}
+      <Dialog
+        className={css.modalContainer}
+        open={modalIsOpen}
         onRequestClose={() => {
           setModalIsOpen(false);
         }}
+        aria-labelledby="dialog-title"
       >
-        <h2>Are you sure you want to delete this contact?</h2>
-        <Button onClick={handleDelete}>Yes</Button>
-        <Button
-          onClick={() => {
-            setModalIsOpen(false);
-          }}
-        >
-          No
-        </Button>
-      </Modal>
+        <DialogTitle id="dialog-title">
+          Are you sure you want to delete this contact?
+        </DialogTitle>
+        <DialogActions>
+          <div className={css.modalButtons}></div>
+          <Button
+            className={css.modalBtn}
+            // type="submit"
+            variant="contained"
+            sx={{ backgroundColor: "#5757b4", marginTop: 2 }}
+            onClick={handleDelete}
+          >
+            Yes
+          </Button>
+          <Button
+            className={css.modalBtn}
+            // type="submit"
+            variant="contained"
+            sx={{ backgroundColor: "#5757b4", marginTop: 2 }}
+            onClick={() => {
+              setModalIsOpen(false);
+            }}
+          >
+            No
+          </Button>
+        </DialogActions>
+      </Dialog>
     </div>
   );
 }
