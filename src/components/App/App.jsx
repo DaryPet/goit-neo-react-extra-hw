@@ -39,7 +39,7 @@ export default function App() {
             element={
               <RestrictedRoute
                 component={<RegistrationPage />}
-                redirectTo="/"
+                redirectTo="/contacts"
               />
             }
           />
@@ -52,7 +52,15 @@ export default function App() {
               />
             }
           />
-          <Route path="/contacts" element={<ContactsPage />} />
+          <Route
+            path="/contacts"
+            element={
+              <PrivateRoute
+                component={<ContactsPage />}
+                redirectTo="/register"
+              />
+            }
+          />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </Suspense>
