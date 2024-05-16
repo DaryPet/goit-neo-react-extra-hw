@@ -3,6 +3,9 @@ import { useId } from "react";
 import * as Yup from "yup";
 import { useDispatch } from "react-redux";
 import css from "./ContactForm.module.css";
+import { Button, Typography } from "@mui/material";
+import { AddCircle } from "@mui/icons-material";
+// import { TextField, Button, Typography, Box } from "@mui/material";
 import { addContact } from "../../redux/contacts/operations";
 
 const initialValues = {
@@ -38,8 +41,13 @@ export default function ContactForm() {
       onSubmit={handleSubmit}
     >
       <Form className={css.wrap}>
+        <Typography variant="h5" gutterBottom sx={{ color: "aliceblue " }}>
+          Manage your Contacts
+        </Typography>
         <div className={css.item}>
-          <label htmlFor={nameFieldId}>Name</label>
+          <label htmlFor={nameFieldId} className={css.text}>
+            Name
+          </label>
           <Field
             className={css.field}
             type="text"
@@ -49,7 +57,9 @@ export default function ContactForm() {
           <ErrorMessage className={css.error} name="name" component="span" />
         </div>
         <div className={css.item}>
-          <label htmlFor={telFieldId}>Number</label>
+          <label htmlFor={telFieldId} className={css.text}>
+            Number
+          </label>
           <Field
             className={css.field}
             type="tel"
@@ -58,10 +68,15 @@ export default function ContactForm() {
           />
           <ErrorMessage className={css.error} name="number" component="span" />
         </div>
-
-        <button className={css.btn} type="submit">
-          Add Contact
-        </button>
+        <Button
+          className={css.btn}
+          type="submit"
+          variant="contained"
+          startIcon={<AddCircle />}
+          sx={{ backgroundColor: "#5757b4", marginTop: 2 }}
+        >
+          ADD CONTACT
+        </Button>
       </Form>
     </Formik>
   );

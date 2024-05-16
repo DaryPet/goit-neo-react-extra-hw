@@ -26,13 +26,15 @@ export default function HomePage() {
           alt="contacts-3"
         />
       </div>
-
-      <p className={css.text}>
-        Welcome to our Contacts App! Manage your contacts effortlessly with our
-        user-friendly interface. Stay organized, save time, and never lose touch
-        with your connections. Start exploring and simplify your contact
-        management today!
-      </p>
+      <div className={css.wrapText}>
+        <h2 className={css.title}>Welcome to our Contact Book App!</h2>
+        <p className={css.text}>
+          Manage your contacts effortlessly with our user-friendly interface.
+          Stay organized, save time, and never lose touch with your connections.
+          Start exploring and simplify your contact management today!
+        </p>
+        <p className={css.emoji}>&#128222;</p>
+      </div>
     </div>
   );
 }

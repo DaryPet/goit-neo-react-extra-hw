@@ -1,16 +1,18 @@
 .text {
-  padding: 2px;
-  margin: 4px;
+  font-size: larger;
+
+  margin: 16px 0;
+  color: aliceblue;
 }
 
 .wrap {
   display: flex;
   flex-direction: column;
   width: 300px;
-  padding: 8px;
+  /* padding: 8px 0; */
   margin-bottom: 30px;
 }
 
 .data {
-  padding: 8px;
+  padding: 14px;
 }

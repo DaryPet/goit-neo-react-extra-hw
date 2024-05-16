@@ -1,8 +1,10 @@
 .wraper {
   margin: 0;
-  padding: 24px;
+  padding: 64px;
+
   background-color: rgb(38, 123, 163);
   min-height: 100vh;
-}
-.text {
+  /* display: flex;
+  gap: 20px;
+  align-items: flex-start; */
 }

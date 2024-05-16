@@ -18,3 +18,10 @@
   font-size: larger;
   text-align: justify;
 }
+.title {
+  color: aliceblue;
+  margin-bottom: 24px;
+}
+.emoji {
+  font-size: 100px;
+}

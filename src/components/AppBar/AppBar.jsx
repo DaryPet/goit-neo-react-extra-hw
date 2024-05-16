@@ -24,10 +24,7 @@ export default function AppBar() {
           CONTACT BOOK
         </Typography>
 
-        {/* <header className={css.header}> */}
         <Box>{isLoggedIn ? <UserMenu /> : <AuthNav />}</Box>
-
-        {/* </header> */}
       </Toolbar>
     </MuiAppBar>
   );
