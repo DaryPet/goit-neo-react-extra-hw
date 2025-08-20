@@ -86,17 +86,6 @@ export default function RegistrationForm() {
           />
         </Box>
         <ErrorMessage name="password" component="div" className={css.error} />
-
-        {/* <label className={css.label}>
-          Username <Field type="text" name="name" />
-        </label>
-        <label className={css.label}>
-          Email <Field type="email" name="email" />
-        </label>
-        <label className={css.label}>
-          Password <Field type="password" name="password" />
-        </label>
-        <button type="submit">Register</button> */}
         <Button
           className={css.btn}
           type="submit"

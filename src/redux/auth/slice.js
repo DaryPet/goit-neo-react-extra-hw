@@ -7,23 +7,25 @@ const authSlice = createSlice({
     user: {
       name: null,
       email: null,
-      loading: false,
-      error: false,
     },
     token: null,
     isLoggedIn: false,
     isRefreshing: false,
+    loading: false,
+    error: null,
   },
   extraReducers: (builder) =>
     builder
       .addCase(register.pending, (state) => {
         state.loading = true;
-        state.error = false;
+        state.error = null;
       })
       .addCase(register.fulfilled, (state, action) => {
         state.user = action.payload.user;
         state.token = action.payload.token;
         state.isLoggedIn = true;
+        state.loading = false;
+        state.error = null;
       })
       .addCase(register.rejected, (state, action) => {
         state.error = action.payload;
@@ -31,12 +33,14 @@ const authSlice = createSlice({
       })
       .addCase(login.pending, (state) => {
         state.loading = true;
-        state.error = false;
+        state.error = null;
       })
       .addCase(login.fulfilled, (state, action) => {
         state.user = action.payload.user;
         state.token = action.payload.token;
         state.isLoggedIn = true;
+         state.loading = false;
+        state.error = null;
       })
       .addCase(login.rejected, (state, action) => {
         state.error = action.payload;
@@ -44,7 +48,7 @@ const authSlice = createSlice({
       })
       .addCase(logout.pending, (state) => {
         state.loading = true;
-        state.error = false;
+        state.error = null;
       })
       .addCase(logout.fulfilled, (state) => {
         state.user = {
@@ -53,6 +57,8 @@ const authSlice = createSlice({
         };
         state.token = null;
         state.isLoggedIn = false;
+        state.loading = false;
+        state.error = null;
       })
       .addCase(logout.rejected, (state, action) => {
         state.error = action.payload;
@@ -65,6 +71,8 @@ const authSlice = createSlice({
         state.user = action.payload;
         state.isLoggedIn = true;
         state.isRefreshing = false;
+        state.loading = false;
+        state.error = null;
       })
       .addCase(refreshUser.rejected, (state, action) => {
         state.error = action.payload;
